@@ -95,8 +95,9 @@ public class MapMatching {
         }
 
         // default is non-CH
+        hints.put(Parameters.CH.DISABLE, false);
         if (!hints.has(Parameters.CH.DISABLE)) {
-            hints.put(Parameters.CH.DISABLE, true);
+            hints.put(Parameters.CH.DISABLE, false);
 
             if (!hopper.getCHFactoryDecorator().isDisablingAllowed())
                 throw new IllegalArgumentException("Cannot disable CH. Not allowed on server side");

@@ -25,7 +25,7 @@ function set_jar {
 
 if [ "$1" = "action=start-server" ]; then
     set_jar "web"
-    ARGS="graph.location=./graph-cache jetty.resourcebase=matching-web/src/main/webapp"
+    ARGS="graph.location=/data/osm-gh config=./config.properties jetty.resourcebase=matching-web/src/main/webapp"
 elif [ "$1" = "action=test" ]; then
     export MAVEN_OPTS="-Xmx400m -Xms400m"
     mvn clean test verify
